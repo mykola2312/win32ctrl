@@ -1,4 +1,6 @@
 #include "win32ctrl.h"
+
+#ifdef WIN32
 #include "win32util.h"
 #include <commctrl.h>
 #include <stdint.h>
@@ -509,3 +511,5 @@ AppMonitor::TV_GetItem(HWND hTree, DWORD_PTR dwItem)
     if (IsWow64()) return TV_GetItem32(hTree, dwItem);
     else return TV_GetItem64(hTree, dwItem);
 }
+
+#endif

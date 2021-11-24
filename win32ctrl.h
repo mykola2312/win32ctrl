@@ -1,6 +1,7 @@
 #ifndef __WIN32CTRL_H
 #define __WIN32CTRL_H
 
+#ifdef WIN32
 #include <Windows.h>
 #include <functional>
 #include <exception>
@@ -166,5 +167,6 @@ private:
         HWND m_hWnd = NULL;
     } m_Tmp;
 };
+#endif
 
 #endif
