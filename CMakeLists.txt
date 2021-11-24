@@ -18,6 +18,7 @@ add_library(win32ctrl SHARED ${SOURCES} ${HEADERS})
 target_include_directories(win32ctrl PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
-target_link_libraries(win32ctrl PRIVATE
-    comctl32
-)
+
+if(MSVC)
+    target_link_libraries(win32ctrl PRIVATE comctl32)
+endif()
